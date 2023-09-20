@@ -2,8 +2,8 @@
   import { formats, type Format, getStringify, getParser } from '$lib';
   import GithubIcon from '$lib/GithubIcon.svelte';
 
-  let from: Format = 'json';
-  let to: Format = 'json5';
+  let from: Format = 'json5';
+  let to: Format = 'json';
   let source = '';
   let converted = '';
 
