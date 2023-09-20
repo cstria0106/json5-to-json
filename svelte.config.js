@@ -8,6 +8,9 @@ const config = {
     adapter: adapter({
       fallback: 'index.html',
     }),
+    paths: {
+      base: process.env.NODE_ENV === 'development' ? '' : '/json5-to-json',
+    },
   },
 };
 
