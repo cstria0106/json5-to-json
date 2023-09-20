@@ -9,6 +9,10 @@
   let parseError = '';
   let stringifyError = '';
 
+  function copy(s: string) {
+    navigator.clipboard.writeText(s);
+  }
+
   $: {
     let data: any = undefined;
 
@@ -63,7 +67,7 @@
     <div class="flex flex-row w-full gap-x-6">
       <div class="source">
         <div class="button text-right">
-          <button>Copy</button>
+          <button on:click={() => copy(source)}>Copy</button>
         </div>
         <textarea class="text" bind:value={source} />
         <div class="error">
@@ -72,7 +76,7 @@
       </div>
       <div class="source">
         <div class="button text-left">
-          <button>Copy</button>
+          <button on:click={() => copy(converted)}>Copy</button>
         </div>
         <textarea class="text" value={converted} disabled />
         <div class="error">
