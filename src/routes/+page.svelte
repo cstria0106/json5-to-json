@@ -1,5 +1,6 @@
 <script lang="ts">
   import { formats, type Format, getStringify, getParser } from '$lib';
+  import GithubIcon from '$lib/GithubIcon.svelte';
 
   let from: Format = 'json';
   let to: Format = 'json5';
@@ -44,7 +45,17 @@
 <div class="flex flex-col w-screen h-screen items-center justify-center">
   <div class="max-w-[1000px] w-full">
     <h1 class="text-2xl text-orange-600 font-bold mb-5 text-center">
-      JSON, JSON5, TOML, YAML Converter
+      json5-to-json
+      <button
+        class="h-4"
+        on:click={() =>
+          window.open(
+            'https://github.com/cstria0106/json5-to-json',
+            '__blank__',
+          )}
+      >
+        <GithubIcon class="w-auto h-full fill-orange-600" />
+      </button>
     </h1>
     <div class="mb-5 flex flex-row w-full text-sm">
       <div class="selector text-right">
